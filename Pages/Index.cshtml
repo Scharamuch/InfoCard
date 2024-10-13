@@ -1,0 +1,27 @@
+﻿@page
+@model QuestionnaireApp.Pages.IndexModel
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Анкета</title>
+</head>
+<body>
+    <h1>Анкета</h1>
+
+    @if (!string.IsNullOrEmpty(Model.Info.Photo))
+    {
+        <img src="data:image/jpg;base64,@Model.Info.Photo" alt="Фотография" style="width: 300px; height: 300px; object-fit: cover; " />
+    }
+    else
+    {
+        <p>Фотография отсутствует.</p>
+    }
+
+    <p><strong>ФИО:</strong> @Model.Info.FullName</p>
+    <p><strong>Группа:</strong> @Model.Info.Group</p>
+    <p><strong>Номер телефона:</strong> @Model.Info.PhoneNumber</p>
+    <p><strong>E-mail:</strong> @Model.Info.Email</p>
+</body>
+</html>
